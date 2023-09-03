@@ -1,10 +1,14 @@
 import React from "react";
-import { ClerkProvider } from "@clerk/nextjs";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
 
 interface Props {
   children: React.ReactNode;
 }
 
 export default function Providers({ children }: Props) {
-  return <ClerkProvider>{children}</ClerkProvider>;
+  return (
+    <NextThemesProvider attribute="class" defaultTheme="dark">
+      {children}
+    </NextThemesProvider>
+  );
 }
