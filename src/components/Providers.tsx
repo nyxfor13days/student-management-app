@@ -9,7 +9,7 @@ interface Props {
 
 export default function Providers({ children }: Props) {
   return (
-    <NextThemesProvider attribute="class" defaultTheme="dark">
+    <NextThemesProvider attribute="class" defaultTheme="left">
       {children}
     </NextThemesProvider>
   );
