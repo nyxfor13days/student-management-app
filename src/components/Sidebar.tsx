@@ -4,45 +4,11 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Montserrat } from "next/font/google";
+import { GearIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
-import {
-  DashboardIcon,
-  FilePlusIcon,
-  GearIcon,
-  PersonIcon,
-  PlusIcon,
-  ReaderIcon,
-} from "@radix-ui/react-icons";
+import { NAVITEMS } from "@/lib/constants";
 
 const headingFont = Montserrat({ weight: "600", subsets: ["latin"] });
-
-const routes = [
-  {
-    label: "Dashboard",
-    icon: DashboardIcon,
-    href: "/dashboard",
-  },
-  {
-    label: "Add Students",
-    icon: PlusIcon,
-    href: "/students/add",
-  },
-  {
-    label: "View Students",
-    icon: PersonIcon,
-    href: "/students",
-  },
-  {
-    label: "Assign Tests",
-    icon: FilePlusIcon,
-    href: "/tests",
-  },
-  {
-    label: "Test Reports",
-    icon: ReaderIcon,
-    href: "/tests/reports",
-  },
-];
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -57,7 +23,7 @@ export default function Sidebar() {
         </Link>
 
         <div className="space-y-1">
-          {routes.map((route, index) => (
+          {NAVITEMS.map((route, index) => (
             <Link
               key={index}
               href={route.href}
